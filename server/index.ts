@@ -44,17 +44,16 @@ app.post("/mcp", async (req, res) => {
     });
 
     server.registerTool(
-      "fetch-weather",
+      "add-numbers",
       {
-        title: "Weather Fetcher",
-        description: "Get weather data for a city",
-        inputSchema: { city: z.string() },
+        title: "Adder",
+        description: "Add two numbers and return the sum",
+        inputSchema: { a: z.number(), b: z.number() },
       },
-      async ({ city }) => {
-        const response = await fetch(`https://api.weather.com/${city}`);
-        const data = await response.text();
+      async ({ a, b }) => {
+        const sum = a + b;
         return {
-          content: [{ type: "text", text: data }],
+          content: [{ type: "text", text: sum.toString() }],
         };
       }
     );
