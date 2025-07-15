@@ -1,4 +1,4 @@
-# MCP Client-Server Chatbot with OpenAI
+# MCP Client-Server
 
 This project is a full-stack chatbot system using the Model Context Protocol (MCP) for tool-calling, with a backend MCP server (Express) and a Next.js client that connects to OpenAI's GPT-4o and the MCP server. The frontend provides a modern chat UI.
 
